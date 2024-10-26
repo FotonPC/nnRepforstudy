@@ -20,7 +20,7 @@ def start_processing(r, w):
         elif data == b'chec':
             os.write(w, b'read')
             data = os.read(r, 8)
-            num = int(data.decode(), 8)
+            num = int(data.decode(), 16)
             os.write(w, b'entr')
             data = os.read(r, num)
             if data in self_data:
